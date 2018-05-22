@@ -1,0 +1,69 @@
+{% extends 'base1.html' %}
+
+
+
+
+
+
+{% block content %}
+
+<aside class="right-side">                
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <div class="box-header">
+                                    <h3 class="box-title">All Loans</h3>    
+									
+                                </div><!-- /.box-header -->
+                               
+                            </div><!-- /.box -->
+
+
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Loan Amount</th>
+                                <th>Monthly Installment</th>
+                            </thead>
+                            <tbody>
+                                
+                                    {%  for loan in loans %}
+                                                                       
+                                <tr>
+                                    <td> {{ loan.user.first_name}}</td> 
+                                    <td> {{ loan.user.last_name}}</td>    
+                                    <td> {{ loan.user}}</td>
+                                    <td>{{ loan.amount}}</td>
+                                    <td>{{ loan.monthly_installment}}</td>
+                                    
+                                    <td><form action="/admin_accept/" method="POST">
+                                              {% csrf_token %}
+                                        <input type="text" name="id" hidden value="{{ loan.id }}" >
+                                        <input type="submit" class="btn btn-primary" value="Accept" >
+
+                                    </form></td>
+                                    <td><form action="/admin_decline/" method="POST">
+                                            {% csrf_token %}
+                                            <input type="text" name="id" hidden value="{{ loan.id }}" >
+                                            <input type="submit" class="btn btn-primary" value="Decline" >
+    
+                                        </form></td>
+                                </tr>
+                                {% endfor%}
+                               
+                            </tbody>
+                        </table>
+
+                    </div>
+ </div>
+
+                </section><!-- /.content -->
+            </aside><!-- /.right-side -->
+                 
+
+{% endblock %}

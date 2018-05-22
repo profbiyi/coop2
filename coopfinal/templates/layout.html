@@ -1,0 +1,49 @@
+
+{% load static%}
+{% load crispy_forms_tags %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>IHS Cooperative Society</title>
+
+    <!-- bootstrap using bootstarp 3-->
+    <link href=" {% static 'css/bootstrap.css'%}" rel="stylesheet" type="text/css">
+    <!-- Styles -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet" type="text/css">
+    <!-- javascript-->
+    <script src="{% static 'js/jquery.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.js'%}"></script>
+</head>
+<body>
+<header>
+<div class="container">
+    <div class="row">
+        <div class="overlay">
+            <a href="" class="brand pull-left">IHS Cooperative Society</a>
+        <ul class="list-inline list-unstyled pull-right">
+
+            <li><a href="">Home</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+
+        </ul>
+    </div>
+</div>
+</div>
+</header>
+{% block content %}
+
+
+
+
+
+{% endblock %}
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+/*   nav-bar section  */
+
+eader{
+    background:linear-gradient(45deg,#f5f7fa,#ebedee);
+    height:70px ;
+    overflow: hidden;
+
+
+}
+
+
+header ul{
+    margin: 0;
+    text-decoration: none;
+}
+header a,header li{
+    padding: 1.4rem 0;
+    font-weight: bold;
+    color: #777;
+
+}
+section#intro-header{
+    background-image: url("hand.jpg");
+    background-size: cover;
+    width: 100%;
+    overflow: hidden;
+
+}
+section#intro-header .wrap-headline{
+    position: relative;
+    padding-top: 20%;
+    padding-bottom:20% ;
+}
+section#intro-header hr {
+    width: 10%;
+}
+#overlay{
+    background-color: rgba(244, 244, 244, 0.5);
+    overflow: hidden;
+}
+section#intro-header h1 {
+    font-weight: bold;
+    color: #f5f8fa;
+
+}
+section#intro-header .btn-default {
+    background-color: rgba(255, 243, 233, 0.77);
+}
+/*  section   about   */
+section#about{
+    margin-top: 10rem;
+}
+section span{
+    font-size: 10rem;
+    color: #ffe796;
+}
+/*   contact form   */
+section#contact{
+    border-top: 1px solid #E0E0E0;
+    padding-top: 3.2em;
+    margin-top: 2em;
+
+}
+section#contact{
+    background-image: url("lool.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    height: 40rem;
+}
+/*     footer */
+footer{
+    border-top: 1px solid #E0E0E0;
+    background-color: #191919;
+    color: #f8f8f8;
+    position: relative;
+    padding-bottom: 20px;
+
+
+}
+
+

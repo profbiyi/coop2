@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <meta charset="utf-8" />
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static "css/base.css" %}" rel="stylesheet">
+</head>
+<body>
+    <div id="header">
+        <a href="{% url 'index' %}"><span class="logo">Cooperative</span></a>
+        <ul class="menu">
+        </ul>
+        <span class="user">
+            <a href="{% url 'login' %}">Log In</a>
+        </span>
+    </div>
+
+{% block content %}
+    <h1>Logged out</h1>
+    <p>You have been successfully logged out. You can <a href="{% url 'login' %}">log-in again</a>.</p>
+{% endblock %}
+</body>
+</html>
+
+

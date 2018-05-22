@@ -1,0 +1,140 @@
+
+{% extends 'base1.html'%}
+{% block content%}
+
+
+<!-- Right side column. Contains the navbar and content of the page -->
+<aside class="right-side">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        Dashboard
+                    </h1>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-aqua">
+                                <div class="inner">
+                                    <h3>
+                                        <sup style="font-size: 20px">NGN</sup>{{request.user.profile.purse}}<sup style="font-size: 20px">.00</sup>
+                                    </h3>
+                                    <p>
+                                        Purse
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-bag"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">
+                                    <i class="fa fa-arrow-circle-up"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-green">
+                                <div class="inner">
+                                    <h3>
+                                        <sup style="font-size: 20px">NGN</sup>200,000<sup style="font-size: 20px">.00</sup>
+                                    </h3>
+                                    <p>
+                                        Total Loan
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-stats-bars"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">
+                                     <i class="fa fa-arrow-circle-up"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-yellow">
+                                <div class="inner">
+                                    <h3>
+                                        <sup style="font-size: 20px">NGN</sup>50,000<sup style="font-size: 20px">.00</sup>
+                                    </h3>
+                                    <p>
+                                        Outstanding Loan Balance
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">
+                                    <i class="fa fa-arrow-circle-up"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-maroon">
+                                <div class="inner">
+                                    <h3>
+                                        None
+                                    </h3>
+                                    <p>
+                                        Sales
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-pie-graph"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">
+                                    <i class="fa fa-arrow-circle-up"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+						<div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-blue">
+                                <div class="inner">
+                                    <h3>
+                                        Nil
+                                    </h3>
+                                    <p>
+                                        Pending Loan Request
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-pie-graph"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">
+                                     <i class="fa fa-arrow-circle-up"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+						<div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                        </div><!-- ./col -->
+                    </div><!-- /.row -->
+
+                    <!-- top row -->
+                    <div class="row">
+                        <div class="col-xs-12 connectedSortable">
+                            
+                        </div><!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+
+                    <!-- Main row -->
+                    <div class="row">
+                        <!-- Left col -->
+                    </div><!-- /.row (main row) -->
+
+                </section><!-- /.content -->
+</aside><!-- /.right-side -->
+
+
+
+
+
+{% endblock %}

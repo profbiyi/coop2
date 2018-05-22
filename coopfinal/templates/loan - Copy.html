@@ -1,0 +1,113 @@
+{% extends 'base1.html'%}
+{% load static%}
+{% include 'message.html'%}
+
+{% block content%}
+
+   <div class="container">
+
+
+       <div id="app">
+
+
+           <form  action="/load/" method="post">
+                              {% csrf_token %}
+                                    <div class="row">
+
+                                        <div class="col-md-7">
+
+                                            <div class="form-group">
+
+                                                <h1 class="text-center txt"></h1>
+
+                                                <label>Amount</label>
+                                                <input type="text" name="amount" class="form-control" v-model="amount" required>
+
+                                        </div>
+
+
+
+
+                                            <div class="form-group">
+
+                                                <label>Tenure</label>
+                                                <select name="tenure" v-model="tenure" required>
+                                                    <option value=""></option>
+                                                    <option value="2">2 month</option>
+                                                    <option value="3">3 month</option>
+                                                    <option value="4">4 month</option>
+                                                    <option value="5">5 month</option>
+                                                    <option value="6">6 month</option>
+                                                    <option value="7">7 month</option>
+                                                    <option value="8">8 month</option>
+                                                    <option value="9">9 month</option>
+                                                    <option value="10">10 month</option>
+                                                    <option value="11">11 month</option>
+                                                    <option value="12">12 month</option>                                                   
+
+                                                </select>
+
+                                        </div>
+                                            <div class="form-group">
+
+                                               
+												<div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                        <input type="text" class="form-control" placeholder="Email" required>
+                                    </div>
+
+                                        </div>
+
+
+                                            <div class="form-group">
+
+                                                <label>Installment</label>
+                                                <input type="text"  class="form-control" name="install" v-model="install">
+
+                                            </div>
+
+
+
+                                            <button  class="btn btn-primary">Submit</button>
+                                        </div>
+
+
+
+                                    </div>
+                                </form>
+                             </div>
+
+   </div>
+    <script src="{% static '/js/jquery.3.2.1.min.js' %}" type="text/javascript"></script>
+<script>
+
+   $(window).ready(function() {
+       $.ajax({
+           type: 'GET',
+           url: '/noloan',
+           success:function(result){
+           if (result['req'] == "requested"){
+               $(".txt").append("Still on Loan, can not receive loan now")
+               $(".form-group :input").prop("disabled",true);
+               $(".btn").prop("disabled",true);
+
+
+
+           }
+           else{
+
+           }
+
+
+           }
+
+
+
+       });
+
+   });
+
+    </script>
+
+  
+   {% endblock %}

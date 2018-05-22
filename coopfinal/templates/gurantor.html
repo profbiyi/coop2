@@ -1,0 +1,107 @@
+{% extends 'base1.html'%}
+{% load staticfiles %}
+
+{% load crispy_forms_tags %}
+
+{% block content%}
+
+<aside class="right-side">                
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <div class="box-header">
+                                    <h3 class="box-title">Guarantor</h3>    
+									
+                                </div><!-- /.box-header -->
+                               
+                            </div><!-- /.box -->
+{% for g in grant%}
+
+  <div class="col-md-6">
+                        <div class="card ">
+                            <div class="header">
+                            </div>
+                            <div class="content">
+                           <p><Strong>Name:</Strong> {{ g.user.first_name}} {{ g.user.last_name}}</p>
+                                <p><Strong>Loan Amount:</Strong> NGN{{ g.amount}}</p>
+                                <p><Strong>Loan Tenure:</Strong> {{ g.tenure}} <Strong>Months</Strong></p>
+                                 <p><Strong>Monthly Installment:</Strong> {{ g.monthly_installment}} </p>
+
+
+                                <div class="footer">
+                                    <div class="legend">
+                                    <div class="stats">
+
+                                        <form action="/accept/" method="Post">
+                                            {% csrf_token %}
+                                            <input type="text" hidden name="loan"  value="{{ g.pk}}">
+                                            <button class="btn btn-primary" id="acc">Accept</button>
+                                        </form>
+
+
+                                        <div class="form-group">
+
+
+                                      
+
+
+                                         <form action="/decline/" method="Post">
+                                              {% csrf_token %}
+
+                                            <input type="text" hidden name="loan" value="{{ g.id}}">
+                                         <button class="btn btn-primary">Decline</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+</div>
+</div>
+
+                </section><!-- /.content -->
+            </aside><!-- /.right-side -->
+  
+    {% endfor %}
+
+
+<script src="{% static '/js/jquery.3.2.1.min.js' %}" type="text/javascript"></script>
+<script>
+
+   $(window).ready(function() {
+       $.ajax({
+           type: 'GET',
+           url: '/accept',
+           success:function(result){
+           if (result['done'] == "accepted"){
+               $(".txt").append("Still on Loan, can not receive loan now")
+               $(".form-group :input").prop("disabled",true);
+               $(".btn").prop("disabled",true);
+
+
+
+           }
+           else{
+
+           }
+
+
+           }
+
+
+
+       });
+
+   });
+
+    </script>
+
+
+
+{% endblock %}
